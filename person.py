@@ -1,16 +1,24 @@
+import datetime
+
+
 class Person:
+    """Класс представления имени и возраста человека"""
     def __init__(self, name, age):
+        """Атрибуты экземпляра класса"""
         self.name = name
         self.age = age
 
     @property
     def display(self):
+        """Вывод основной информации"""
         return f'{self.name} is {self.age} years old'
 
     @classmethod
     def from_birth_year(cls, name, birth_year):
+        """Вычисление возраста человека по году рождения"""
         name = name
-        age = birth_year
+        today = datetime.date.today()
+        age = today.year - birth_year
         return cls(name, age)
 
     @classmethod
