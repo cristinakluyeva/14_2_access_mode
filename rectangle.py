@@ -2,6 +2,7 @@ import math
 
 
 class Rectangle:
+    """Класс для работы со сторонами прямоугольника"""
     def __init__(self, width, height):
         self.width = width
         self.height = height
